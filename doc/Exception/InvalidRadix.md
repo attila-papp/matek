@@ -2,6 +2,6 @@
 
 <br/>
 
-## Matek::Exception::InvalidRoundingMethod
+## Matek::Exception::InvalidRadix
 
-Invalid rounding method exception.
+Invalid radix exception.
