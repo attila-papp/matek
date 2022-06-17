@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.1.0
+ * Version 0.2.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.1.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.2.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */

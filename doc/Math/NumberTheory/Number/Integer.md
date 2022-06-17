@@ -60,7 +60,7 @@ Parameters
 				- `- 9d3`
 				- `s1b76k`
 - `Matek::Math::NumberTheory::Radix radix`
-	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.1.0/doc/Math/NumberTheory/Radix.md)
+	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.2.0/doc/Math/NumberTheory/Radix.md)
 
 Exceptions
 - `Matek::Exception::InvalidConstructorStringArgument`

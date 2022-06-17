@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.1.0
+ * Version 0.2.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.1.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.2.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */
@@ -23,6 +23,7 @@
 #include "../Radix.h"
 #include "../RoundingMethod.h"
 #include "../Accuracy.h"
+#include "../Divisibility.h"
 #include "../../../Exception/DivideByZero.h"
 #include "../../../Exception/InvalidConstructorStringArgument.h"
 #include "../../../Exception/InvalidRadix.h"
@@ -600,6 +601,10 @@ namespace Matek::Math::NumberTheory::Number {
 				operator<<(std::ostream& os, const Rational& ref);
 
 			bool am(const Integer& a, const Integer& b) const;
+
+			Integer gn() const;
+
+			Integer gd() const;
 
 		private:
 			struct Impl;

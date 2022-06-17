@@ -1,11 +1,19 @@
+/**
+ * Matek
+ * Version 0.2.0
+ * https://github.com/attila-papp/matek
+ *
+ * Freeware Licence Agreement:
+ * https://github.com/attila-papp/matek/blob/v0.2.0/LICENCE.md
+ *
+ * Copyright (C) 2021-present, Attila Papp.
+ */
+
 #ifndef MATEK_EXCEPTION_INVALIDZEROARGUMENT_H
 #define MATEK_EXCEPTION_INVALIDZEROARGUMENT_H
 
 #include <exception>
 
-/**
- * @author: Attila Papp
- */
 namespace Matek::Exception {
 
 	/**
