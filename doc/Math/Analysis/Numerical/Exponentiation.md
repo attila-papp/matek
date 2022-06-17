@@ -4,7 +4,7 @@
 
 ## Matek::Math::Analysis::Numerical::Exponentiation
 
-Contains Exponentiation functions.<br/>
+Contains exponentiation functions.<br/>
 
 <br/><br/>
 
