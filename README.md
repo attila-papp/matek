@@ -13,16 +13,16 @@ You can use rational numbers with arbitrary accuracy.
 You can create numbers and write them to the output in multiple numeral systems. Available bases are 10 (decimal) and 16 (hexadecimal).
 
 - **Professional rounding features**<br/>
-You can round rational numbers with several rounding method and arbitrary accuracy.
+You can round rational numbers with several rounding methods and arbitrary accuracy.
 
 - **Greatest common divisor and least common multiple**<br/>
 You can use additional integer operations, such as GCD and LCM.
 
-- **Exponentiation and root.**<br/>
+- **Exponentiation and root**<br/>
 You can compute power and root with arbitrary rational exponent and degree.
 
 - **Logarithm**<br/>
-You can compute natural logarithm, and logarithm with any rational base
+You can compute natural logarithm, and logarithm with any rational base.
 
 ## Requirements
 C++17 or higher

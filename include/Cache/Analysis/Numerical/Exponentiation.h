@@ -12,6 +12,7 @@
 #ifndef MATEK_CACHE_ANALYSIS_NUMERICAL_EXPONENTIATION_H
 #define MATEK_CACHE_ANALYSIS_NUMERICAL_EXPONENTIATION_H
 
+#include <vector>
 #include "../../../Math/NumberTheory/Number/Rational.h"
 
 namespace Matek::Cache::Analysis::Numerical {
