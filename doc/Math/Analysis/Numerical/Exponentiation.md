@@ -14,27 +14,27 @@ Contains exponentiation functions.<br/>
 static Matek::Math::NumberTheory::Number::Rational power(
 	const Matek::Math::NumberTheory::Number::Rational& base,
 	const Matek::Math::NumberTheory::Number::Rational& exponent = 2,
-	const Matek::Math::NumberTheory::Accuracy& accuracy = 8
+	const Matek::Math::NumberTheory::Number::Rational& epsilon =
+		Matek::Math::NumberTheory::Number::Rational("0.00000001")
 );
 ```
 
-Computes power with arbitrary rational exponent and arbitrary accuracy.
+Computes approximation of power with arbitrary rational exponent and arbitrary accuracy.
 
 Parameters
 - `const Matek::Math::NumberTheory::Number::Rational& base`
 - `const Matek::Math::NumberTheory::Number::Rational& exponent`
-- `const const Matek::Math::NumberTheory::Accuracy& accuracy`
-	- The accuracy definition object
+- `const Matek::Math::NumberTheory::Number::Rational& epsilon`
+	- The result will be within this epsilon accuracy
 
 Return value
 - `Matek::Math::NumberTheory::Number::Rational`
 
 Exceptions
-- `Matek::Exception::InvalidRadix`
-- `Matek::Exception::InvalidRoundingMethod`
 - `Matek::Exception::InvalidExponentOfPower`
 - `Matek::Exception::InvalidDegreeOfRoot`
 - `Matek::Exception::InvalidRadicandOfRoot`
+- `Matek::Exception::InvalidEpsilonValue`
 
 <br/><br/>
 
@@ -44,26 +44,81 @@ Exceptions
 static Matek::Math::NumberTheory::Number::Rational root(
 	const Matek::Math::NumberTheory::Number::Rational& radicand,
 	const Matek::Math::NumberTheory::Number::Rational& degree = 2,
-	const Matek::Math::NumberTheory::Accuracy& accuracy = 8
+	const Matek::Math::NumberTheory::Number::Rational& epsilon =
+		Matek::Math::NumberTheory::Number::Rational("0.00000001")
 );
 ```
 
-Computes root with arbitrary rational degree and arbitrary accuracy.
+Computes approximation of root with arbitrary rational degree and arbitrary accuracy.
 
 Parameters
 - `const Matek::Math::NumberTheory::Number::Rational& radicand`
 - `const Matek::Math::NumberTheory::Number::Rational& degree`
-- `const Matek::Math::NumberTheory::Accuracy& accuracy`
-	- The accuracy definition object
+- `const Matek::Math::NumberTheory::Number::Rational& epsilon`
+	- The result will be within this epsilon accuracy
 
 Return value
 - `Matek::Math::NumberTheory::Number::Rational`
 
 Exceptions
-- `Matek::Exception::InvalidRadix`
-- `Matek::Exception::InvalidRoundingMethod`
 - `Matek::Exception::InvalidExponentOfPower`
 - `Matek::Exception::InvalidDegreeOfRoot`
 - `Matek::Exception::InvalidRadicandOfRoot`
+- `Matek::Exception::InvalidEpsilonValue`
+
+<br/><br/>
+
+
+
+```c++
+static Matek::Math::NumberTheory::Number::Rational naturalLogarithm(
+	const Matek::Math::NumberTheory::Number::Rational& x,
+	const Matek::Math::NumberTheory::Number::Rational& epsilon =
+		Matek::Math::NumberTheory::Number::Rational("0.00000001")
+);
+```
+
+Computes approximation of natural logarithm with arbitrary accuracy.
+
+Parameters
+- `const Matek::Math::NumberTheory::Number::Rational& x`
+- `const Matek::Math::NumberTheory::Number::Rational& epsilon`
+	- The result will be within this epsilon accuracy
+
+Return value
+- `Matek::Math::NumberTheory::Number::Rational`
+
+Exceptions
+- `Matek::Exception::InvalidAntiLogarithm`
+- `Matek::Exception::InvalidEpsilonValue`
+
+<br/><br/>
+
+
+
+```c++
+static Matek::Math::NumberTheory::Number::Rational logarithm(
+	const Matek::Math::NumberTheory::Number::Rational& x,
+	const Matek::Math::NumberTheory::Number::Rational& base,
+	const Matek::Math::NumberTheory::Number::Rational& epsilon =
+		Matek::Math::NumberTheory::Number::Rational("0.00000001")
+);
+```
+
+Computes approximation of logarithm with arbitrary rational base and arbitrary accuracy.
+
+Parameters
+- `const Matek::Math::NumberTheory::Number::Rational& x`
+- `const Matek::Math::NumberTheory::Number::Rational& base`
+- `const Matek::Math::NumberTheory::Number::Rational& epsilon`
+	- The result will be within this epsilon accuracy
+
+Return value
+- `Matek::Math::NumberTheory::Number::Rational`
+
+Exceptions
+- `Matek::Exception::InvalidAntiLogarithm`
+- `Matek::Exception::InvalidBaseOfLogarithm`
+- `Matek::Exception::InvalidEpsilonValue`
 
 <br/><br/>

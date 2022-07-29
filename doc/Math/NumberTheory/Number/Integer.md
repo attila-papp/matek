@@ -60,7 +60,7 @@ Parameters
 				- `- 9d3`
 				- `s1b76k`
 - `Matek::Math::NumberTheory::Radix radix`
-	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.2.0/doc/Math/NumberTheory/Radix.md)
+	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.3.0/doc/Math/NumberTheory/Radix.md)
 
 Exceptions
 - `Matek::Exception::InvalidConstructorStringArgument`
@@ -572,7 +572,7 @@ Exceptions
 Integer operator/(const Integer& ref) const;
 ```
 
-Division operator.
+Euclidean division operator.
 
 Parameters
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
@@ -591,7 +591,7 @@ Exceptions
 friend Integer operator/(long long int number, const Integer& ref);
 ```
 
-Division operator with built-in integer type on the left.
+Euclidean division operator with built-in integer type on the left.
 
 Parameters
 - `long long int number`
@@ -611,7 +611,7 @@ Exceptions
 friend Integer operator/(std::string str, const Integer& ref);
 ```
 
-Division operator with `std::string` type on the left.
+Euclidean division operator with `std::string` type on the left.
 
 Parameters
 - `std::string str`
@@ -632,7 +632,8 @@ Exceptions
 Integer operator%(const Integer& ref) const;
 ```
 
-Modulus operator.
+Modulo operator.<br/>
+It uses the "floored" logic. [More information](https://en.wikipedia.org/wiki/Modulo_operation)
 
 Parameters
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
@@ -651,7 +652,8 @@ Exceptions
 friend Integer operator%(long long int number, const Integer& ref);
 ```
 
-Modulus operator with built-in integer type on the left.
+Modulo operator with built-in integer type on the left.<br/>
+It uses the "floored" logic. [More information](https://en.wikipedia.org/wiki/Modulo_operation)
 
 Parameters
 - `long long int number`
@@ -671,7 +673,8 @@ Exceptions
 friend Integer operator%(std::string str, const Integer& ref);
 ```
 
-Modulus operator with `std::string` type on the left.
+Modulo operator with `std::string` type on the left.<br/>
+It uses the "floored" logic. [More information](https://en.wikipedia.org/wiki/Modulo_operation)
 
 Parameters
 - `std::string str`
@@ -812,7 +815,7 @@ Return value
 Integer operator/=(const Integer& ref);
 ```
 
-Division assignment operator.
+Euclidean division assignment operator.
 
 Parameters
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
@@ -831,7 +834,8 @@ Exceptions
 Integer operator%=(const Integer& ref);
 ```
 
-Modulus assignment operator.
+Modulo assignment operator.<br/>
+It uses the "floored" logic. [More information](https://en.wikipedia.org/wiki/Modulo_operation)
 
 Parameters
 - `const Matek::Math::NumberTheory::Number::Integer& ref`

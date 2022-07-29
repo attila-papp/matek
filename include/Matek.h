@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.2.0
+ * Version 0.3.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.2.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.3.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */
@@ -12,9 +12,13 @@
 #ifndef MATEK_MATEK_H
 #define MATEK_MATEK_H
 
+#include "Cache/Analysis/Numerical/Exponentiation.h"
 #include "Exception/DivideByZero.h"
+#include "Exception/InvalidAntiLogarithm.h"
+#include "Exception/InvalidBaseOfLogarithm.h"
 #include "Exception/InvalidConstructorStringArgument.h"
 #include "Exception/InvalidDegreeOfRoot.h"
+#include "Exception/InvalidEpsilonValue.h"
 #include "Exception/InvalidExponentOfPower.h"
 #include "Exception/InvalidRadicandOfRoot.h"
 #include "Exception/InvalidRadix.h"

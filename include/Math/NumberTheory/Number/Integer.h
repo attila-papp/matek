@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.2.0
+ * Version 0.3.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.2.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.3.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */
@@ -383,7 +383,7 @@ namespace Matek::Math::NumberTheory::Number {
 			friend Integer operator*(std::string str, const Integer& ref);
 
 			/**
-			 * Division operator
+			 * Euclidean division operator
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Integer& ref
 			 *
@@ -394,7 +394,8 @@ namespace Matek::Math::NumberTheory::Number {
 			Integer operator/(const Integer& ref) const;
 
 			/**
-			 * Division operator with built-in integer type on the left
+			 * Euclidean division operator with built-in integer type
+			 * on the left
 			 *
 			 * @param long long int number
 			 *
@@ -407,7 +408,7 @@ namespace Matek::Math::NumberTheory::Number {
 			friend Integer operator/(long long int number, const Integer& ref);
 
 			/**
-			 * Division operator with std::string type on the left
+			 * Euclidean division operator with std::string type on the left
 			 *
 			 * @param std::string str
 			 *
@@ -421,7 +422,7 @@ namespace Matek::Math::NumberTheory::Number {
 			friend Integer operator/(std::string str, const Integer& ref);
 
 			/**
-			 * Modulus operator
+			 * Modulo operator
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Integer& ref
 			 *
@@ -432,7 +433,7 @@ namespace Matek::Math::NumberTheory::Number {
 			Integer operator%(const Integer& ref) const;
 
 			/**
-			 * Modulus operator with built-in integer type on the left
+			 * Modulo operator with built-in integer type on the left
 			 *
 			 * @param long long int number
 			 *
@@ -445,7 +446,7 @@ namespace Matek::Math::NumberTheory::Number {
 			friend Integer operator%(long long int number, const Integer& ref);
 
 			/**
-			 * Modulus operator with std::string type on the left
+			 * Modulo operator with std::string type on the left
 			 *
 			 * @param std::string str
 			 *
@@ -514,7 +515,7 @@ namespace Matek::Math::NumberTheory::Number {
 			Integer operator*=(const Integer& ref);
 
 			/**
-			 * Division assignment operator
+			 * Euclidean division assignment operator
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Integer& ref
 			 *
@@ -525,7 +526,7 @@ namespace Matek::Math::NumberTheory::Number {
 			Integer operator/=(const Integer& ref);
 
 			/**
-			 * Modulus assignment operator
+			 * Modulo assignment operator
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Integer& ref
 			 *
@@ -599,6 +600,12 @@ namespace Matek::Math::NumberTheory::Number {
 				operator<<(std::ostream& os, const Integer& ref);
 
 			bool am(bool b, std::vector<unsigned char> v) const;
+
+			unsigned long long int gvs() const;
+
+			Integer cs2pn() const;
+
+			Integer gefcs2pn() const;
 
 		private:
 			struct Impl;

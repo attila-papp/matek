@@ -40,9 +40,9 @@ Parameters
 			- Defines, how many digits will be rounded in the integer part.
 			- For example: With value -2, `812.3` will be `800`
 - `Matek::Math::NumberTheory::Radix radix`
-	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.2.0/doc/Math/NumberTheory/Radix.md)
+	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.3.0/doc/Math/NumberTheory/Radix.md)
 - `Matek::Math::NumberTheory::RoundingMethod method`
-	- For valid rounding method values, see [RoundingMethod.md](https://github.com/attila-papp/matek/blob/v0.2.0/doc/Math/NumberTheory/RoundingMethod.md)
+	- For valid rounding method values, see [RoundingMethod.md](https://github.com/attila-papp/matek/blob/v0.3.0/doc/Math/NumberTheory/RoundingMethod.md)
 
 <br/><br/>
 

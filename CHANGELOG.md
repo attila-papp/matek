@@ -9,6 +9,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <br/><br/>
 
+## v0.3.0 - 2022.07.29
+
+### Added
+- Functionality
+	- Logarithm
+	- Simplificate function in `Matek::Math::NumberTheory::Number::Rational` class
+- Header files
+	- include/Exception/InvalidAntiLogarithm.h
+	- include/Exception/InvalidBaseOfLogarithm.h
+	- include/Exception/InvalidEpsilonValue.h
+	- include/Cache/Analysis/Numerical/Exponentiation.h
+
+### Changed
+- Modulo calculation logic has changed in the following functions from truncated to floored. [More information](https://en.wikipedia.org/wiki/Modulo_operation)
+	- `Matek::Math::NumberTheory::Number::Integer::operator%(const Integer& ref) const;`
+	- `friend Matek::Math::NumberTheory::Number::Integer::operator%(long long int number, const Integer& ref);`
+	- `friend Matek::Math::NumberTheory::Number::Integer::operator%(std::string str, const Integer& ref);`
+- Accuracy calculation logic of power and root functions has changed in `Matek::Math::Analysis::Numerical::Exponentiation` class.
+- Readme file
+- Library files
+- Documentation files
+- Example files
+- Performance optimization
+
+### Fixed
+- An edge case bug has fixed in `Matek::Math::NumberTheory::Number::Integer::Integer(long long int number);` function.
+- An edge case bug has fixed in power and root functions.
+
+
+
+<br/><br/>
+
 ## v0.2.0 - 2022.06.17
 
 ### Added
@@ -17,6 +49,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- Least common multiple
 	- Exponentiation
 - Header files
+	- include/Exception/InvalidExponentOfPower.h
+	- include/Exception/InvalidDegreeOfRoot.h
+	- include/Exception/InvalidRadicandOfRoot.h
 	- include/Math/NumberTheory/Divisibility.h
 	- include/Math/Analysis/Numerical/Exponentiation.h
 

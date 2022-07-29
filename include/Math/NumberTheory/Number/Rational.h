@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.2.0
+ * Version 0.3.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.2.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.3.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */
@@ -26,6 +26,7 @@
 #include "../Divisibility.h"
 #include "../../../Exception/DivideByZero.h"
 #include "../../../Exception/InvalidConstructorStringArgument.h"
+#include "../../../Exception/InvalidEpsilonValue.h"
 #include "../../../Exception/InvalidRadix.h"
 #include "../../../Exception/InvalidRoundingMethod.h"
 #include "../../../Exception/InvalidZeroArgument.h"
@@ -34,6 +35,7 @@ namespace Matek::Math::NumberTheory::Number {
 
 	/**
 	 * Represents a rational number, and implements basic operations on it.
+	 * The inner representation of the number is a fraction.
 	 * This number can be practically any size with any accuracy,
 	 * there is only hardware limit.
 	 */
@@ -558,6 +560,14 @@ namespace Matek::Math::NumberTheory::Number {
 			Rational setInverse();
 
 			/**
+			 * Simplificates the fraction in the inner representation,
+			 * AND returns with the number
+			 *
+			 * @return Matek::Math::NumberTheory::Number::Rational
+			 */
+			Rational simplificate();
+
+			/**
 			 * Gets the string representation of the number
 			 *
 			 * @param Matek::Math::NumberTheory::Accuracy accuracy
@@ -605,6 +615,8 @@ namespace Matek::Math::NumberTheory::Number {
 			Integer gn() const;
 
 			Integer gd() const;
+
+			long long int gadfn10() const;
 
 		private:
 			struct Impl;

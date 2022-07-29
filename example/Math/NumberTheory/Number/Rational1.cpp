@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.2.0
+ * Version 0.3.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.2.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.3.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */
@@ -22,7 +22,8 @@ int main(int argc, char* argv[]) {
 		number_1(691),
 		number_2(17, 5),
 		number_3("98.1682273"),
-		number_4("-38053508839091.308263660858015283808628763");
+		number_4("-38053508839091.308263660858015283808628763"),
+		number_5(340, 51);
 
 	//Use some of the comparison operators
 	cout << ((number_1 == number_2) ? "true" : "false") << endl;
@@ -58,6 +59,11 @@ int main(int argc, char* argv[]) {
 
 	cout << number_2 << endl;
 	cout << number_4 << endl;
+
+	//Simplificate
+	number_5.simplificate();
+
+	cout << number_5 << endl;
 
 	//Use toString function
 	string str = number_4.toString();

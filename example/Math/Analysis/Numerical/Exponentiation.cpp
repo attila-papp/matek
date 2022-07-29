@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.2.0
+ * Version 0.3.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.2.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.3.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */
@@ -18,23 +18,30 @@ using namespace Matek::Math::NumberTheory::Number;
 using namespace Matek::Math::Analysis::Numerical;
 
 int main(int argc, char* argv[]) {
-	//Create numbers
+	//Create numbers and epsilon accuracy
 	Rational
 		number_1("5.4"),
 		number_2("-8007168681680.306"),
-		number_3("1.5");
-
-	//Create accuracy object
-	Accuracy
-		accuracy(16);
+		number_3("1.5"),
+		number_4("349"),
+		number_5("5.20762458029"),
+		epsilon_1("0.00000000000000001");
 
 	//Calculate power
 	cout << Exponentiation::power(number_1, 4) << endl;
 
 	//Calculate root
 	cout
-	<< Exponentiation::root(number_2, number_3, accuracy).toString(accuracy)
+	<< Exponentiation::root(number_2, number_3, epsilon_1).toString(16)
 	<< endl;
+
+	//Calculate natural logarithm
+	cout << Exponentiation::naturalLogarithm(number_4) << endl;
+
+	//Calculate logarithm
+	cout << Exponentiation::logarithm(
+		number_4, number_5, epsilon_1
+	).toString(16) << endl;
 
 	return 0;
 }

@@ -5,6 +5,7 @@
 ## Matek::Math::NumberTheory::Number::Rational
 
 Represents a rational number, and implements basic operations on it.<br/>
+The inner representation of the number is a fraction.<br/>
 This number can be practically any size with any accuracy, there is only hardware limit.<br/>
 
 <br/><br/>
@@ -60,7 +61,7 @@ Parameters
 				- `- 1e05.9ae`
 				- `w73pm9`
 - `Matek::Math::NumberTheory::Radix radix`
-	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.2.0/doc/Math/NumberTheory/Radix.md)
+	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.3.0/doc/Math/NumberTheory/Radix.md)
 
 Exceptions
 - `Matek::Exception::InvalidConstructorStringArgument`
@@ -856,6 +857,19 @@ Return value
 
 
 ```c++
+Rational simplificate();
+```
+
+Simplificates the fraction in the inner representation, AND returns with the number.
+
+Return value
+- `Matek::Math::NumberTheory::Number::Rational`
+
+<br/><br/>
+
+
+
+```c++
 std::string toString(
 	Matek::Math::NumberTheory::Accuracy accuracy = 8
 ) const;
@@ -889,7 +903,7 @@ Rounds number to integer and returns with `Matek::Math::NumberTheory::Number::In
 
 Parameters
 - `Matek::Math::NumberTheory::RoundingMethod method`
-	- For valid rounding method values, see [RoundingMethod.md](https://github.com/attila-papp/matek/blob/v0.2.0/doc/Math/NumberTheory/RoundingMethod.md)
+	- For valid rounding method values, see [RoundingMethod.md](https://github.com/attila-papp/matek/blob/v0.3.0/doc/Math/NumberTheory/RoundingMethod.md)
 
 Return value
 - `Matek::Math::NumberTheory::Number::Integer`
