@@ -23,7 +23,7 @@ Parameters
 - `const Matek::Math::NumberTheory::Number::Rational& number`
 	- The number we wish to round.
 - `const Matek::Math::NumberTheory::Accuracy& accuracy`
-	- The accuracy definition object
+	- The accuracy definition object.
 
 Return value
 - `Matek::Math::NumberTheory::Number::Rational`

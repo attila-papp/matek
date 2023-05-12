@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.3.0
+ * Version 0.4.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.3.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.4.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */
@@ -12,6 +12,7 @@
 #ifndef MATEK_MATH_NUMBERTHEORY_ACCURACY_H
 #define MATEK_MATH_NUMBERTHEORY_ACCURACY_H
 
+#include <cstdint>
 #include <string>
 #include <iostream>
 #include <memory>
@@ -24,13 +25,15 @@ namespace Matek::Math::NumberTheory {
 
 	/**
 	 * Defines accuracy.
+	 * It's a digit-based accuracy definition, which is useful for rounding and
+	 * toString function for rational numbers.
 	 */
 	class Accuracy {
 		public:
 			/**
-			 * Constructs accuracy definition
+			 * Constructs accuracy definition.
 			 *
-			 * @param long long int digit
+			 * @param std::int64_t digit
 			 * (Examples are in HALF_TO_EVEN rounding method)
 			 * Values:
 			 *     0: Rounds to integer.
@@ -52,7 +55,7 @@ namespace Matek::Math::NumberTheory {
 			 * include/Math/NumberTheory/RoundingMethod.h
 			 */
 			Accuracy(
-				long long int digit,
+				std::int64_t digit,
 				Matek::Math::NumberTheory::Radix radix =
 					Matek::Math::NumberTheory::Radix::RADIX_10,
 				Matek::Math::NumberTheory::RoundingMethod method =
@@ -60,19 +63,19 @@ namespace Matek::Math::NumberTheory {
 			);
 
 			/**
-			 * Copy constructs accuracy definition
+			 * Copy constructs accuracy definition.
 			 *
 			 * @param const Matek::Math::NumberTheory::Accuracy& ref
 			 */
 			Accuracy(const Accuracy& ref);
 
 			/**
-			 * Destructs accuracy definition
+			 * Destructs accuracy definition.
 			 */
 			~Accuracy();
 
 			/**
-			 * Assignment operator
+			 * Assignment operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Accuracy& ref
 			 *
@@ -94,13 +97,13 @@ namespace Matek::Math::NumberTheory {
 			 * Equal operator with built-in integer type on the left.
 			 * All members are considered.
 			 *
-			 * @param long long int digit
+			 * @param std::int64_t digit
 			 *
 			 * @param const Matek::Math::NumberTheory::Accuracy& ref
 			 *
 			 * @return bool
 			 */
-			friend bool operator==(long long int digit, const Accuracy& ref);
+			friend bool operator==(std::int64_t digit, const Accuracy& ref);
 
 			/**
 			 * Not equal operator.
@@ -116,39 +119,39 @@ namespace Matek::Math::NumberTheory {
 			 * Not equal operator with built-in integer type on the left.
 			 * All members are considered.
 			 *
-			 * @param long long int digit
+			 * @param std::int64_t digit
 			 *
 			 * @param const Matek::Math::NumberTheory::Accuracy& ref
 			 *
 			 * @return bool
 			 */
-			friend bool operator!=(long long int digit, const Accuracy& ref);
+			friend bool operator!=(std::int64_t digit, const Accuracy& ref);
 
 			/**
-			 * Gets digit
+			 * Gets digit.
 			 *
-			 * @return long long int
+			 * @return std::int64_t
 			 */
-			long long int getDigit() const;
+			std::int64_t getDigit() const;
 
 			/**
-			 * Sets digit
+			 * Sets digit.
 			 *
-			 * @param long long int digit
+			 * @param std::int64_t digit
 			 *
 			 * @return Matek::Math::NumberTheory::Accuracy&
 			 */
-			Accuracy& setDigit(long long int digit);
+			Accuracy& setDigit(std::int64_t digit);
 
 			/**
-			 * Gets radix
+			 * Gets radix.
 			 *
 			 * @return Matek::Math::NumberTheory::Radix
 			 */
 			Matek::Math::NumberTheory::Radix getRadix() const;
 
 			/**
-			 * Sets radix
+			 * Sets radix.
 			 *
 			 * @param Matek::Math::NumberTheory::Radix radix
 			 *
@@ -157,7 +160,7 @@ namespace Matek::Math::NumberTheory {
 			Accuracy& setRadix(Matek::Math::NumberTheory::Radix radix);
 
 			/**
-			 * Gets rounding method
+			 * Gets rounding method.
 			 *
 			 * @return Matek::Math::NumberTheory::RoundingMethod
 			 */
@@ -165,7 +168,7 @@ namespace Matek::Math::NumberTheory {
 			const;
 
 			/**
-			 * Sets rounding method
+			 * Sets rounding method.
 			 *
 			 * @param Matek::Math::NumberTheory::RoundingMethod method
 			 *

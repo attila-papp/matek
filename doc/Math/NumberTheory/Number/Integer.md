@@ -16,13 +16,13 @@ This number can be practically any size, there is only hardware limit.<br/>
 <br/>
 
 ```c++
-Integer(long long int number);
+Integer(std::int64_t number);
 ```
 
 Constructs integer number with built-in integer type.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 	- The number we wish to create.
 
 <br/><br/>
@@ -43,7 +43,7 @@ Parameters
 - `std::string str`
 	- The number, represented with a string.
 	- Valid string values:
-		- Base 10: `^(0)|(-?[1-9][0-9]*)$`
+		- Radix 10: `^(0)|(-?[1-9][0-9]*)$`
 			- Examples of valid values:
 				- `982`
 				- `-1073`
@@ -51,7 +51,7 @@ Parameters
 				- `0472`
 				- `- 65`
 				- `6c3`
-		- Base 16: `^(0)|(-?[1-9a-fA-F][0-9a-fA-F]*)$`
+		- Radix 16: `^(0)|(-?[1-9a-fA-F][0-9a-fA-F]*)$`
 			- Examples of valid values:
 				- `a830b1`
 				- `-709`
@@ -60,7 +60,7 @@ Parameters
 				- `- 9d3`
 				- `s1b76k`
 - `Matek::Math::NumberTheory::Radix radix`
-	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.3.0/doc/Math/NumberTheory/Radix.md)
+	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.4.0/doc/Math/NumberTheory/Radix.md)
 
 Exceptions
 - `Matek::Exception::InvalidConstructorStringArgument`
@@ -104,13 +104,13 @@ Return value
 
 
 ```c++
-friend bool operator==(long long int number, const Integer& ref);
+friend bool operator==(std::int64_t number, const Integer& ref);
 ```
 
 Equal operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
 
 Return value
@@ -157,13 +157,13 @@ Return value
 
 
 ```c++
-friend bool operator!=(long long int number, const Integer& ref);
+friend bool operator!=(std::int64_t number, const Integer& ref);
 ```
 
 Not equal operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
 
 Return value
@@ -210,13 +210,13 @@ Return value
 
 
 ```c++
-friend bool operator>(long long int number, const Integer& ref);
+friend bool operator>(std::int64_t number, const Integer& ref);
 ```
 
 Greater than operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
 
 Return value
@@ -263,13 +263,13 @@ Return value
 
 
 ```c++
-friend bool operator>=(long long int number, const Integer& ref);
+friend bool operator>=(std::int64_t number, const Integer& ref);
 ```
 
 Greater than or equal operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
 
 Return value
@@ -316,13 +316,13 @@ Return value
 
 
 ```c++
-friend bool operator<(long long int number, const Integer& ref);
+friend bool operator<(std::int64_t number, const Integer& ref);
 ```
 
 Less than operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
 
 Return value
@@ -369,13 +369,13 @@ Return value
 
 
 ```c++
-friend bool operator<=(long long int number, const Integer& ref);
+friend bool operator<=(std::int64_t number, const Integer& ref);
 ```
 
 Less than or equal operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
 
 Return value
@@ -426,13 +426,13 @@ Return value
 
 
 ```c++
-friend Integer operator+(long long int number, const Integer& ref);
+friend Integer operator+(std::int64_t number, const Integer& ref);
 ```
 
 Addition operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
 
 Return value
@@ -479,13 +479,13 @@ Return value
 
 
 ```c++
-friend Integer operator-(long long int number, const Integer& ref);
+friend Integer operator-(std::int64_t number, const Integer& ref);
 ```
 
 Subtraction operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
 
 Return value
@@ -532,13 +532,13 @@ Return value
 
 
 ```c++
-friend Integer operator*(long long int number, const Integer& ref);
+friend Integer operator*(std::int64_t number, const Integer& ref);
 ```
 
 Multiplication operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
 
 Return value
@@ -588,13 +588,13 @@ Exceptions
 
 
 ```c++
-friend Integer operator/(long long int number, const Integer& ref);
+friend Integer operator/(std::int64_t number, const Integer& ref);
 ```
 
 Euclidean division operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
 
 Return value
@@ -649,14 +649,14 @@ Exceptions
 
 
 ```c++
-friend Integer operator%(long long int number, const Integer& ref);
+friend Integer operator%(std::int64_t number, const Integer& ref);
 ```
 
 Modulo operator with built-in integer type on the left.<br/>
 It uses the "floored" logic. [More information](https://en.wikipedia.org/wiki/Modulo_operation)
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Integer& ref`
 
 Return value
@@ -930,6 +930,7 @@ Gets the string representation of the number.
 
 Parameters
 - `Matek::Math::NumberTheory::Radix radix`
+	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.4.0/doc/Math/NumberTheory/Radix.md)
 
 Return value
 - `std::string`

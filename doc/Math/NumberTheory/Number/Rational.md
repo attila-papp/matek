@@ -17,13 +17,13 @@ This number can be practically any size with any accuracy, there is only hardwar
 <br/>
 
 ```c++
-Rational(long long int number);
+Rational(std::int64_t number);
 ```
 
 Constructs rational number with built-in integer type.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 	- The number we wish to create.
 
 <br/><br/>
@@ -44,7 +44,7 @@ Parameters
 - `std::string str`
 	- The number, represented with a string.
 	- Valid string values:
-		- Base 10: `^(0(\\.0+)?)|(-?((0\\.[0-9]*[1-9][0-9]*)|([1-9][0-9]*(\\.[0-9]+)?)))$`
+		- Radix 10: `^(0(\\.0+)?)|(-?((0\\.[0-9]*[1-9][0-9]*)|([1-9][0-9]*(\\.[0-9]+)?)))$`
 			- Examples of valid values:
 				- `29.41`
 				- `-9981`
@@ -52,7 +52,7 @@ Parameters
 				- `072.9`
 				- `- 2986`
 				- `c809.1b`
-		- Base 16: `^(0(\\.0+)?)|(-?((0\\.[0-9a-fA-F]*[1-9a-fA-F][0-9a-fA-F]*)|([1-9a-fA-F][0-9a-fA-F]*(\\.[0-9a-fA-F]+)?)))$`
+		- Radix 16: `^(0(\\.0+)?)|(-?((0\\.[0-9a-fA-F]*[1-9a-fA-F][0-9a-fA-F]*)|([1-9a-fA-F][0-9a-fA-F]*(\\.[0-9a-fA-F]+)?)))$`
 			- Examples of valid values:
 				- `b8f2`
 				- `-670d.3ce5`
@@ -61,7 +61,7 @@ Parameters
 				- `- 1e05.9ae`
 				- `w73pm9`
 - `Matek::Math::NumberTheory::Radix radix`
-	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.3.0/doc/Math/NumberTheory/Radix.md)
+	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.4.0/doc/Math/NumberTheory/Radix.md)
 
 Exceptions
 - `Matek::Exception::InvalidConstructorStringArgument`
@@ -124,13 +124,13 @@ Return value
 
 
 ```c++
-friend bool operator==(long long int number, const Rational& ref);
+friend bool operator==(std::int64_t number, const Rational& ref);
 ```
 
 Equal operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Rational& ref`
 
 Return value
@@ -177,13 +177,13 @@ Return value
 
 
 ```c++
-friend bool operator!=(long long int number, const Rational& ref);
+friend bool operator!=(std::int64_t number, const Rational& ref);
 ```
 
 Not equal operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Rational& ref`
 
 Return value
@@ -230,13 +230,13 @@ Return value
 
 
 ```c++
-friend bool operator>(long long int number, const Rational& ref);
+friend bool operator>(std::int64_t number, const Rational& ref);
 ```
 
 Greater than operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Rational& ref`
 
 Return value
@@ -283,13 +283,13 @@ Return value
 
 
 ```c++
-friend bool operator>=(long long int number, const Rational& ref);
+friend bool operator>=(std::int64_t number, const Rational& ref);
 ```
 
 Greater than or equal operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Rational& ref`
 
 Return value
@@ -336,13 +336,13 @@ Return value
 
 
 ```c++
-friend bool operator<(long long int number, const Rational& ref);
+friend bool operator<(std::int64_t number, const Rational& ref);
 ```
 
 Less than operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Rational& ref`
 
 Return value
@@ -389,13 +389,13 @@ Return value
 
 
 ```c++
-friend bool operator<=(long long int number, const Rational& ref);
+friend bool operator<=(std::int64_t number, const Rational& ref);
 ```
 
 Less than or equal operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Rational& ref`
 
 Return value
@@ -446,13 +446,13 @@ Return value
 
 
 ```c++
-friend Rational operator+(long long int number, const Rational& ref);
+friend Rational operator+(std::int64_t number, const Rational& ref);
 ```
 
 Addition operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Rational& ref`
 
 Return value
@@ -499,13 +499,13 @@ Return value
 
 
 ```c++
-friend Rational operator-(long long int number, const Rational& ref);
+friend Rational operator-(std::int64_t number, const Rational& ref);
 ```
 
 Subtraction operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Rational& ref`
 
 Return value
@@ -552,13 +552,13 @@ Return value
 
 
 ```c++
-friend Rational operator*(long long int number, const Rational& ref);
+friend Rational operator*(std::int64_t number, const Rational& ref);
 ```
 
 Multiplication operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Rational& ref`
 
 Return value
@@ -608,13 +608,13 @@ Exceptions
 
 
 ```c++
-friend Rational operator/(long long int number, const Rational& ref);
+friend Rational operator/(std::int64_t number, const Rational& ref);
 ```
 
 Division operator with built-in integer type on the left.
 
 Parameters
-- `long long int number`
+- `std::int64_t number`
 - `const Matek::Math::NumberTheory::Number::Rational& ref`
 
 Return value
@@ -879,7 +879,7 @@ Gets the string representation of the number.
 
 Parameters
 - `Matek::Math::NumberTheory::Accuracy accuracy`
-	- The accuracy definition object
+	- The accuracy definition object.
 
 Return value
 - `std::string`
@@ -903,7 +903,7 @@ Rounds number to integer and returns with `Matek::Math::NumberTheory::Number::In
 
 Parameters
 - `Matek::Math::NumberTheory::RoundingMethod method`
-	- For valid rounding method values, see [RoundingMethod.md](https://github.com/attila-papp/matek/blob/v0.3.0/doc/Math/NumberTheory/RoundingMethod.md)
+	- For valid rounding method values, see [RoundingMethod.md](https://github.com/attila-papp/matek/blob/v0.4.0/doc/Math/NumberTheory/RoundingMethod.md)
 
 Return value
 - `Matek::Math::NumberTheory::Number::Integer`

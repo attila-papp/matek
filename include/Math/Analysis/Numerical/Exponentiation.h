@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.3.0
+ * Version 0.4.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.3.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.4.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */
@@ -12,10 +12,15 @@
 #ifndef MATEK_MATH_ANALYSIS_NUMERICAL_EXPONENTIATION_H
 #define MATEK_MATH_ANALYSIS_NUMERICAL_EXPONENTIATION_H
 
+#include <vector>
+#include <cstdint>
+#include <cstddef>
+
 #include "../../NumberTheory/Number/Integer.h"
 #include "../../NumberTheory/Number/Rational.h"
 #include "../../NumberTheory/Accuracy.h"
 #include "../../NumberTheory/Rounding.h"
+#include "../../NumberTheory/RoundingMethod.h"
 #include "../../../Exception/InvalidExponentOfPower.h"
 #include "../../../Exception/InvalidDegreeOfRoot.h"
 #include "../../../Exception/InvalidRadicandOfRoot.h"
@@ -23,6 +28,8 @@
 #include "../../../Exception/InvalidAntiLogarithm.h"
 #include "../../../Exception/InvalidBaseOfLogarithm.h"
 #include "../../../Cache/Analysis/Numerical/Exponentiation.h"
+#include "Constant.h"
+#include "../../../Dto/IntegerRational.h"
 
 namespace Matek::Math::Analysis::Numerical {
 
@@ -33,7 +40,7 @@ namespace Matek::Math::Analysis::Numerical {
 		public:
 			/**
 			 * Computes approximation of power with arbitrary rational exponent
-			 * and arbitrary accuracy
+			 * and arbitrary accuracy.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& base
 			 *
@@ -41,6 +48,8 @@ namespace Matek::Math::Analysis::Numerical {
 			 * Matek::Math::NumberTheory::Number::Rational& exponent
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& epsilon
+			 * The result will be within this epsilon accuracy.
+			 * Epsilon represents an absolute margin of error.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 *
@@ -57,8 +66,29 @@ namespace Matek::Math::Analysis::Numerical {
 			);
 
 			/**
+			 * Computes approximation of the natural exponential function (e^x)
+			 * with arbitrary rational exponent and arbitrary accuracy.
+			 *
+			 * @param const
+			 * Matek::Math::NumberTheory::Number::Rational& exponent
+			 *
+			 * @param const Matek::Math::NumberTheory::Number::Rational& epsilon
+			 * The result will be within this epsilon accuracy.
+			 * Epsilon represents an absolute margin of error.
+			 *
+			 * @return Matek::Math::NumberTheory::Number::Rational
+			 *
+			 * @throw Matek::Exception::InvalidEpsilonValue
+			 */
+			static Matek::Math::NumberTheory::Number::Rational exponential(
+				const Matek::Math::NumberTheory::Number::Rational& exponent,
+				const Matek::Math::NumberTheory::Number::Rational& epsilon =
+					Matek::Math::NumberTheory::Number::Rational("0.00000001")
+			);
+
+			/**
 			 * Computes approximation of root with arbitrary rational degree
-			 * and arbitrary accuracy
+			 * and arbitrary accuracy.
 			 *
 			 * @param const
 			 * Matek::Math::NumberTheory::Number::Rational& radicand
@@ -66,6 +96,8 @@ namespace Matek::Math::Analysis::Numerical {
 			 * @param const Matek::Math::NumberTheory::Number::Rational& degree
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& epsilon
+			 * The result will be within this epsilon accuracy.
+			 * Epsilon represents an absolute margin of error.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 *
@@ -83,11 +115,13 @@ namespace Matek::Math::Analysis::Numerical {
 
 			/**
 			 * Computes approximation of natural logarithm with arbitrary
-			 * accuracy
+			 * accuracy.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& x
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& epsilon
+			 * The result will be within this epsilon accuracy.
+			 * Epsilon represents an absolute margin of error.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 *
@@ -102,13 +136,15 @@ namespace Matek::Math::Analysis::Numerical {
 
 			/**
 			 * Computes approximation of logarithm with arbitrary rational base
-			 * and arbitrary accuracy
+			 * and arbitrary accuracy.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& x
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& base
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& epsilon
+			 * The result will be within this epsilon accuracy.
+			 * Epsilon represents an absolute margin of error.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 *
@@ -123,29 +159,47 @@ namespace Matek::Math::Analysis::Numerical {
 					Matek::Math::NumberTheory::Number::Rational("0.00000001")
 			);
 
-			static Matek::Math::NumberTheory::Number::Rational gem(
-				const Matek::Math::NumberTheory::Number::Rational& a
+			static Matek::Math::NumberTheory::Number::Rational eevl(
+				const Matek::Math::NumberTheory::Number::Integer& gefcs2pn,
+				const Matek::Math::NumberTheory::Number::Rational& a,
+				const bool fromAbove
+			);
+
+			static Matek::Math::NumberTheory::Number::Rational ce1fp(
+				const Matek::Math::NumberTheory::Number::Rational& x,
+				const Matek::Math::NumberTheory::Number::Rational& ex,
+				const Matek::Math::NumberTheory::Number::Rational& epsilon
 			);
 
 		private:
-			static Matek::Math::NumberTheory::Number::Rational cig(
-				const Matek::Math::NumberTheory::Number::Rational& a,
-				const Matek::Math::NumberTheory::Number::Integer& n
-			);
-
 			static Matek::Math::NumberTheory::Number::Rational iep(
 				const Matek::Math::NumberTheory::Number::Rational& a,
 				const Matek::Math::NumberTheory::Number::Integer& n
 			);
 
-			static Matek::Math::NumberTheory::Number::Rational idr(
-				const Matek::Math::NumberTheory::Number::Rational& a,
-				const Matek::Math::NumberTheory::Number::Integer& n,
+			static Matek::Math::NumberTheory::Number::Rational ce1fe(
+				const Matek::Math::NumberTheory::Number::Rational& ex,
+				const Matek::Math::NumberTheory::Number::Integer& enr,
 				const Matek::Math::NumberTheory::Number::Rational& epsilon
+			);
+
+			static Matek::Math::NumberTheory::Number::Rational ef(
+				const Matek::Math::NumberTheory::Number::Rational& ex,
+				const Matek::Math::NumberTheory::Number::Rational& epsilon
+			);
+
+			static Matek::Dto::IntegerRational nlnx(
+				const Matek::Math::NumberTheory::Number::Rational& x
 			);
 
 			static Matek::Math::NumberTheory::Number::Rational nn(
 				const Matek::Math::NumberTheory::Number::Rational& x,
+				const Matek::Math::NumberTheory::Number::Rational& epsilon
+			);
+
+			static Matek::Math::NumberTheory::Number::Rational ce1(
+				const Matek::Math::NumberTheory::Number::Rational& x,
+				const Matek::Math::NumberTheory::Number::Rational& b,
 				const Matek::Math::NumberTheory::Number::Rational& epsilon
 			);
 

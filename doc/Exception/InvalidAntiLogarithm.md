@@ -4,4 +4,4 @@
 
 ## Matek::Exception::InvalidAntiLogarithm
 
-Invalid anti-logarithm exception. Logarithm "X" value must be positive.
+Invalid anti-logarithm exception. Logarithm "x" value must be positive.

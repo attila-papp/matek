@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.3.0
+ * Version 0.4.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.3.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.4.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */
@@ -17,12 +17,12 @@
 namespace Matek::Exception {
 
 	/**
-	 * Invalid radicand of root exception
+	 * Invalid radicand of root exception.
 	 */
 	class InvalidRadicandOfRoot : public std::exception {
 		public:
 			/**
-			 * Returns exception message
+			 * Returns exception message.
 			 *
 			 * @return const char*
 			 */

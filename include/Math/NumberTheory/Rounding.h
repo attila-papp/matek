@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.3.0
+ * Version 0.4.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.3.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.4.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */
@@ -27,11 +27,13 @@ namespace Matek::Math::NumberTheory {
 	class Rounding {
 		public:
 			/**
-			 * Rounds rational number
+			 * Rounds rational number.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& number
+			 * The number we wish to round.
 			 *
 			 * @param const Matek::Math::NumberTheory::Accuracy& accuracy
+			 * The accuracy definition object.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 *

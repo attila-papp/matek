@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.3.0
+ * Version 0.4.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.3.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.4.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */
@@ -12,6 +12,8 @@
 #ifndef MATEK_MATH_NUMBERTHEORY_NUMBER_RATIONAL_H
 #define MATEK_MATH_NUMBERTHEORY_NUMBER_RATIONAL_H
 
+#include <cstdint>
+#include <cstddef>
 #include <string>
 #include <regex>
 #include <stdio.h>
@@ -42,24 +44,39 @@ namespace Matek::Math::NumberTheory::Number {
 	class Rational {
 		public:
 			/**
-			 * Constructs rational number with built-in integer type
+			 * Constructs rational number with built-in integer type.
+			 * The number we wish to create.
 			 *
-			 * @param long long int number
+			 * @param std::int64_t number
 			 */
-			Rational(long long int number);
+			Rational(std::int64_t number);
 
 			/**
-			 * Constructs rational number with std::string type
+			 * Constructs rational number with std::string type.
 			 *
 			 * @param std::string str
-			 * The number, represented with a string
+			 * The number, represented with a string.
 			 * Valid string values:
-			 *     Base 10:
+			 *     Radix 10:
 			 *         ^(0(\\.0+)?)|(-?((0\\.[0-9]*[1-9][0-9]*)|
 			 *         ([1-9][0-9]*(\\.[0-9]+)?)))$
-			 *     Base 16:
+			 *         Examples of valid values:
+			 *             29.41
+			 *             -9981
+			 *         Examples of invalid values:
+			 *             072.9
+			 *             - 2986
+			 *             c809.1b
+			 *     Radix 16:
 			 *         ^(0(\\.0+)?)|(-?((0\\.[0-9a-fA-F]*[1-9a-fA-F][0-9a-f
 			 *         A-F]*)|([1-9a-fA-F][0-9a-fA-F]*(\\.[0-9a-fA-F]+)?)))$
+			 *         Examples of valid values:
+			 *             b8f2
+			 *             -670d.3ce5
+			 *         Examples of invalid values:
+			 *             0d40a
+			 *             - 1e05.9ae
+			 *             w73pm9
 			 *
 			 * @param Matek::Math::NumberTheory::Radix radix
 			 * For valid radix values, see include/Math/NumberTheory/Radix.h
@@ -74,7 +91,7 @@ namespace Matek::Math::NumberTheory::Number {
 			);
 
 			/**
-			 * Constructs rational number with fraction
+			 * Constructs rational number with fraction.
 			 *
 			 * @param const
 			 * Matek::Math::NumberTheory::Number::Integer& numerator
@@ -87,19 +104,19 @@ namespace Matek::Math::NumberTheory::Number {
 			Rational(const Integer& numerator, const Integer& denominator = 1);
 
 			/**
-			 * Copy constructs rational number
+			 * Copy constructs rational number.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 */
 			Rational(const Rational& ref);
 
 			/**
-			 * Destructs rational number
+			 * Destructs rational number.
 			 */
 			~Rational();
 
 			/**
-			 * Assignment operator
+			 * Assignment operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -108,7 +125,7 @@ namespace Matek::Math::NumberTheory::Number {
 			Rational& operator=(const Rational& ref);
 
 			/**
-			 * Equal operator
+			 * Equal operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -117,18 +134,18 @@ namespace Matek::Math::NumberTheory::Number {
 			bool operator==(const Rational& ref) const;
 
 			/**
-			 * Equal operator with built-in integer type on the left
+			 * Equal operator with built-in integer type on the left.
 			 *
-			 * @param long long int number
+			 * @param std::int64_t number
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
 			 * @return bool
 			 */
-			friend bool operator==(long long int number, const Rational& ref);
+			friend bool operator==(std::int64_t number, const Rational& ref);
 
 			/**
-			 * Equal operator with std::string type on the left
+			 * Equal operator with std::string type on the left.
 			 *
 			 * @param std::string str
 			 *
@@ -141,7 +158,7 @@ namespace Matek::Math::NumberTheory::Number {
 			friend bool operator==(std::string str, const Rational& ref);
 
 			/**
-			 * Not equal operator
+			 * Not equal operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -150,18 +167,18 @@ namespace Matek::Math::NumberTheory::Number {
 			bool operator!=(const Rational& ref) const;
 
 			/**
-			 * Not equal operator with built-in integer type on the left
+			 * Not equal operator with built-in integer type on the left.
 			 *
-			 * @param long long int number
+			 * @param std::int64_t number
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
 			 * @return bool
 			 */
-			friend bool operator!=(long long int number, const Rational& ref);
+			friend bool operator!=(std::int64_t number, const Rational& ref);
 
 			/**
-			 * Not equal operator with std::string type on the left
+			 * Not equal operator with std::string type on the left.
 			 *
 			 * @param std::string str
 			 *
@@ -174,7 +191,7 @@ namespace Matek::Math::NumberTheory::Number {
 			friend bool operator!=(std::string str, const Rational& ref);
 
 			/**
-			 * Greater than operator
+			 * Greater than operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -183,18 +200,18 @@ namespace Matek::Math::NumberTheory::Number {
 			bool operator>(const Rational& ref) const;
 
 			/**
-			 * Greater than operator with built-in integer type on the left
+			 * Greater than operator with built-in integer type on the left.
 			 *
-			 * @param long long int number
+			 * @param std::int64_t number
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
 			 * @return bool
 			 */
-			friend bool operator>(long long int number, const Rational& ref);
+			friend bool operator>(std::int64_t number, const Rational& ref);
 
 			/**
-			 * Greater than operator with std::string type on the left
+			 * Greater than operator with std::string type on the left.
 			 *
 			 * @param std::string str
 			 *
@@ -207,7 +224,7 @@ namespace Matek::Math::NumberTheory::Number {
 			friend bool operator>(std::string str, const Rational& ref);
 
 			/**
-			 * Greater than or equal operator
+			 * Greater than or equal operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -217,18 +234,18 @@ namespace Matek::Math::NumberTheory::Number {
 
 			/**
 			 * Greater than or equal operator with built-in integer type on
-			 * the left
+			 * the left.
 			 *
-			 * @param long long int number
+			 * @param std::int64_t number
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
 			 * @return bool
 			 */
-			friend bool operator>=(long long int number, const Rational& ref);
+			friend bool operator>=(std::int64_t number, const Rational& ref);
 
 			/**
-			 * Greater than or equal operator with std::string type on the left
+			 * Greater than or equal operator with std::string type on the left.
 			 *
 			 * @param std::string str
 			 *
@@ -241,7 +258,7 @@ namespace Matek::Math::NumberTheory::Number {
 			friend bool operator>=(std::string str, const Rational& ref);
 
 			/**
-			 * Less than operator
+			 * Less than operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -250,18 +267,18 @@ namespace Matek::Math::NumberTheory::Number {
 			bool operator<(const Rational& ref) const;
 
 			/**
-			 * Less than operator with built-in integer type on the left
+			 * Less than operator with built-in integer type on the left.
 			 *
-			 * @param long long int number
+			 * @param std::int64_t number
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
 			 * @return bool
 			 */
-			friend bool operator<(long long int number, const Rational& ref);
+			friend bool operator<(std::int64_t number, const Rational& ref);
 
 			/**
-			 * Less than operator with std::string type on the left
+			 * Less than operator with std::string type on the left.
 			 *
 			 * @param std::string str
 			 *
@@ -274,7 +291,7 @@ namespace Matek::Math::NumberTheory::Number {
 			friend bool operator<(std::string str, const Rational& ref);
 
 			/**
-			 * Less than or equal operator
+			 * Less than or equal operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -284,18 +301,18 @@ namespace Matek::Math::NumberTheory::Number {
 
 			/**
 			 * Less than or equal operator with built-in integer type on
-			 * the left
+			 * the left.
 			 *
-			 * @param long long int number
+			 * @param std::int64_t number
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
 			 * @return bool
 			 */
-			friend bool operator<=(long long int number, const Rational& ref);
+			friend bool operator<=(std::int64_t number, const Rational& ref);
 
 			/**
-			 * Less than or equal operator with std::string type on the left
+			 * Less than or equal operator with std::string type on the left.
 			 *
 			 * @param std::string str
 			 *
@@ -308,7 +325,7 @@ namespace Matek::Math::NumberTheory::Number {
 			friend bool operator<=(std::string str, const Rational& ref);
 
 			/**
-			 * Addition operator
+			 * Addition operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -317,21 +334,21 @@ namespace Matek::Math::NumberTheory::Number {
 			Rational operator+(const Rational& ref) const;
 
 			/**
-			 * Addition operator with built-in integer type on the left
+			 * Addition operator with built-in integer type on the left.
 			 *
-			 * @param long long int number
+			 * @param std::int64_t number
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 */
 			friend Rational operator+(
-				long long int number,
+				std::int64_t number,
 				const Rational& ref
 			);
 
 			/**
-			 * Addition operator with std::string type on the left
+			 * Addition operator with std::string type on the left.
 			 *
 			 * @param std::string str
 			 *
@@ -344,7 +361,7 @@ namespace Matek::Math::NumberTheory::Number {
 			friend Rational operator+(std::string str, const Rational& ref);
 
 			/**
-			 * Subtraction operator
+			 * Subtraction operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -353,21 +370,21 @@ namespace Matek::Math::NumberTheory::Number {
 			Rational operator-(const Rational& ref) const;
 
 			/**
-			 * Subtraction operator with built-in integer type on the left
+			 * Subtraction operator with built-in integer type on the left.
 			 *
-			 * @param long long int number
+			 * @param std::int64_t number
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 */
 			friend Rational operator-(
-				long long int number,
+				std::int64_t number,
 				const Rational& ref
 			);
 
 			/**
-			 * Subtraction operator with std::string type on the left
+			 * Subtraction operator with std::string type on the left.
 			 *
 			 * @param std::string str
 			 *
@@ -380,7 +397,7 @@ namespace Matek::Math::NumberTheory::Number {
 			friend Rational operator-(std::string str, const Rational& ref);
 
 			/**
-			 * Multiplication operator
+			 * Multiplication operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -389,21 +406,21 @@ namespace Matek::Math::NumberTheory::Number {
 			Rational operator*(const Rational& ref) const;
 
 			/**
-			 * Multiplication operator with built-in integer type on the left
+			 * Multiplication operator with built-in integer type on the left.
 			 *
-			 * @param long long int number
+			 * @param std::int64_t number
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 */
 			friend Rational operator*(
-				long long int number,
+				std::int64_t number,
 				const Rational& ref
 			);
 
 			/**
-			 * Multiplication operator with std::string type on the left
+			 * Multiplication operator with std::string type on the left.
 			 *
 			 * @param std::string str
 			 *
@@ -416,7 +433,7 @@ namespace Matek::Math::NumberTheory::Number {
 			friend Rational operator*(std::string str, const Rational& ref);
 
 			/**
-			 * Division operator
+			 * Division operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -427,9 +444,9 @@ namespace Matek::Math::NumberTheory::Number {
 			Rational operator/(const Rational& ref) const;
 
 			/**
-			 * Division operator with built-in integer type on the left
+			 * Division operator with built-in integer type on the left.
 			 *
-			 * @param long long int number
+			 * @param std::int64_t number
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -438,12 +455,12 @@ namespace Matek::Math::NumberTheory::Number {
 			 * @throw Matek::Exception::DivideByZero
 			 */
 			friend Rational operator/(
-				long long int number,
+				std::int64_t number,
 				const Rational& ref
 			);
 
 			/**
-			 * Division operator with std::string type on the left
+			 * Division operator with std::string type on the left.
 			 *
 			 * @param std::string str
 			 *
@@ -457,35 +474,35 @@ namespace Matek::Math::NumberTheory::Number {
 			friend Rational operator/(std::string str, const Rational& ref);
 
 			/**
-			 * Pre-increment operator
+			 * Pre-increment operator.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 */
 			Rational operator++();
 
 			/**
-			 * Post-increment operator
+			 * Post-increment operator.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 */
 			Rational operator++(int);
 
 			/**
-			 * Pre-decrement operator
+			 * Pre-decrement operator.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 */
 			Rational operator--();
 
 			/**
-			 * Post-decrement operator
+			 * Post-decrement operator.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 */
 			Rational operator--(int);
 
 			/**
-			 * Addition assignment operator
+			 * Addition assignment operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -494,7 +511,7 @@ namespace Matek::Math::NumberTheory::Number {
 			Rational operator+=(const Rational& ref);
 
 			/**
-			 * Subtraction assignment operator
+			 * Subtraction assignment operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -503,7 +520,7 @@ namespace Matek::Math::NumberTheory::Number {
 			Rational operator-=(const Rational& ref);
 
 			/**
-			 * Multiplication assignment operator
+			 * Multiplication assignment operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -512,7 +529,7 @@ namespace Matek::Math::NumberTheory::Number {
 			Rational operator*=(const Rational& ref);
 
 			/**
-			 * Division assignment operator
+			 * Division assignment operator.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Rational& ref
 			 *
@@ -523,37 +540,36 @@ namespace Matek::Math::NumberTheory::Number {
 			Rational operator/=(const Rational& ref);
 
 			/**
-			 * Checks if the number is negative
+			 * Checks if the number is negative.
 			 *
 			 * @return bool
 			 */
 			bool isNegative() const;
 
 			/**
-			 * Gets the absolute value of the number
+			 * Gets the absolute value of the number.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 */
 			Rational getAbsolute() const;
 
 			/**
-			 * Sets number to its absolute value,
-			 * AND returns with the absolute value
+			 * Sets number to its absolute value, AND returns with the
+			 * absolute value.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 */
 			Rational setAbsolute();
 
 			/**
-			 * Gets the inverse of the number
+			 * Gets the inverse of the number.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 */
 			Rational getInverse() const;
 
 			/**
-			 * Sets number to its inverse,
-			 * AND returns with the inverse
+			 * Sets number to its inverse, AND returns with the inverse.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 */
@@ -561,16 +577,17 @@ namespace Matek::Math::NumberTheory::Number {
 
 			/**
 			 * Simplificates the fraction in the inner representation,
-			 * AND returns with the number
+			 * AND returns with the number.
 			 *
 			 * @return Matek::Math::NumberTheory::Number::Rational
 			 */
 			Rational simplificate();
 
 			/**
-			 * Gets the string representation of the number
+			 * Gets the string representation of the number.
 			 *
 			 * @param Matek::Math::NumberTheory::Accuracy accuracy
+			 * The accuracy definition object.
 			 *
 			 * @return std::string
 			 *
@@ -583,7 +600,7 @@ namespace Matek::Math::NumberTheory::Number {
 
 			/**
 			 * Rounds number to integer and returns with
-			 * Matek::Math::NumberTheory::Number::Integer type
+			 * Matek::Math::NumberTheory::Number::Integer type.
 			 *
 			 * @param Matek::Math::NumberTheory::RoundingMethod method
 			 * For valid rounding method values, see
@@ -599,7 +616,7 @@ namespace Matek::Math::NumberTheory::Number {
 			) const;
 
 			/**
-			 * Insertion (<<) operator
+			 * Insertion (<<) operator.
 			 *
 			 * @param std::ostream& os
 			 *
@@ -616,7 +633,7 @@ namespace Matek::Math::NumberTheory::Number {
 
 			Integer gd() const;
 
-			long long int gadfn10() const;
+			std::int64_t gadfn16() const;
 
 		private:
 			struct Impl;

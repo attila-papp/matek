@@ -5,6 +5,7 @@
 ## Matek::Math::NumberTheory::Accuracy
 
 Defines accuracy.<br/>
+It's a digit-based accuracy definition, which is useful for rounding and toString function for rational numbers.<br/>
 
 <br/><br/>
 
@@ -16,7 +17,7 @@ Defines accuracy.<br/>
 
 ```c++
 Accuracy(
-	long long int digit,
+	std::int64_t digit,
 	Matek::Math::NumberTheory::Radix radix =
 		Matek::Math::NumberTheory::Radix::RADIX_10,
 	Matek::Math::NumberTheory::RoundingMethod method =
@@ -27,7 +28,7 @@ Accuracy(
 Constructs accuracy definition.
 
 Parameters
-- `long long int digit`
+- `std::int64_t digit`
 	- (Examples are in `HALF_TO_EVEN` rounding method)
 	- Values:
 		- 0:
@@ -40,9 +41,9 @@ Parameters
 			- Defines, how many digits will be rounded in the integer part.
 			- For example: With value -2, `812.3` will be `800`
 - `Matek::Math::NumberTheory::Radix radix`
-	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.3.0/doc/Math/NumberTheory/Radix.md)
+	- For valid radix values, see [Radix.md](https://github.com/attila-papp/matek/blob/v0.4.0/doc/Math/NumberTheory/Radix.md)
 - `Matek::Math::NumberTheory::RoundingMethod method`
-	- For valid rounding method values, see [RoundingMethod.md](https://github.com/attila-papp/matek/blob/v0.3.0/doc/Math/NumberTheory/RoundingMethod.md)
+	- For valid rounding method values, see [RoundingMethod.md](https://github.com/attila-papp/matek/blob/v0.4.0/doc/Math/NumberTheory/RoundingMethod.md)
 
 <br/><br/>
 
@@ -66,26 +67,26 @@ Parameters
 <br/>
 
 ```c++
-long long int getDigit() const;
+std::int64_t getDigit() const;
 ```
 
 Gets digit.
 
 Return value
-- `long long int`
+- `std::int64_t`
 
 <br/><br/>
 
 
 
 ```c++
-Accuracy& setDigit(long long int digit);
+Accuracy& setDigit(std::int64_t digit);
 ```
 
 Sets digit.
 
 Parameters
-- `long long int digit`
+- `std::int64_t digit`
 
 Return value
 - `Matek::Math::NumberTheory::Accuracy&`
@@ -174,14 +175,14 @@ Return value
 
 
 ```c++
-friend bool operator==(long long int digit, const Accuracy& ref);
+friend bool operator==(std::int64_t digit, const Accuracy& ref);
 ```
 
 Equal operator with built-in integer type on the left.<br/>
 All members are considered.
 
 Parameters
-- `long long int digit`
+- `std::int64_t digit`
 - `const Matek::Math::NumberTheory::Accuracy& ref`
 
 Return value
@@ -209,14 +210,14 @@ Return value
 
 
 ```c++
-friend bool operator!=(long long int digit, const Accuracy& ref);
+friend bool operator!=(std::int64_t digit, const Accuracy& ref);
 ```
 
 Not equal operator with built-in integer type on the left.<br/>
 All members are considered.
 
 Parameters
-- `long long int digit`
+- `std::int64_t digit`
 - `const Matek::Math::NumberTheory::Accuracy& ref`
 
 Return value

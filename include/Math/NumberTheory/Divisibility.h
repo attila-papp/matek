@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.3.0
+ * Version 0.4.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.3.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.4.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */
@@ -23,7 +23,7 @@ namespace Matek::Math::NumberTheory {
 	class Divisibility {
 		public:
 			/**
-			 * Calculates greatest common divisor
+			 * Calculates greatest common divisor.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Integer& a
 			 *
@@ -40,7 +40,7 @@ namespace Matek::Math::NumberTheory {
 			);
 
 			/**
-			 * Calculates least common multiple
+			 * Calculates least common multiple.
 			 *
 			 * @param const Matek::Math::NumberTheory::Number::Integer& a
 			 *

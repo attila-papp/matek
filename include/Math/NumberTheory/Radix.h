@@ -1,10 +1,10 @@
 /**
  * Matek
- * Version 0.3.0
+ * Version 0.4.0
  * https://github.com/attila-papp/matek
  *
  * Freeware Licence Agreement:
- * https://github.com/attila-papp/matek/blob/v0.3.0/LICENCE.md
+ * https://github.com/attila-papp/matek/blob/v0.4.0/LICENCE.md
  *
  * Copyright (C) 2021-present, Attila Papp.
  */
@@ -19,12 +19,12 @@ namespace Matek::Math::NumberTheory {
 	 */
 	enum class Radix : int {
 		/**
-		 * For decimal numeral system
+		 * For decimal numeral system.
 		 */
 		RADIX_10,
 
 		/**
-		 * For hexadecimal numeral system
+		 * For hexadecimal numeral system.
 		 */
 		RADIX_16,
 	};

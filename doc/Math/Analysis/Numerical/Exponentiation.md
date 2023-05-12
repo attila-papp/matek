@@ -25,7 +25,7 @@ Parameters
 - `const Matek::Math::NumberTheory::Number::Rational& base`
 - `const Matek::Math::NumberTheory::Number::Rational& exponent`
 - `const Matek::Math::NumberTheory::Number::Rational& epsilon`
-	- The result will be within this epsilon accuracy
+	- The result will be within this epsilon accuracy. Epsilon represents an absolute margin of error.
 
 Return value
 - `Matek::Math::NumberTheory::Number::Rational`
@@ -34,6 +34,31 @@ Exceptions
 - `Matek::Exception::InvalidExponentOfPower`
 - `Matek::Exception::InvalidDegreeOfRoot`
 - `Matek::Exception::InvalidRadicandOfRoot`
+- `Matek::Exception::InvalidEpsilonValue`
+
+<br/><br/>
+
+
+
+```c++
+static Matek::Math::NumberTheory::Number::Rational exponential(
+	const Matek::Math::NumberTheory::Number::Rational& exponent,
+	const Matek::Math::NumberTheory::Number::Rational& epsilon =
+		Matek::Math::NumberTheory::Number::Rational("0.00000001")
+);
+```
+
+Computes approximation of the natural exponential function (e^x) with arbitrary rational exponent and arbitrary accuracy.
+
+Parameters
+- `const Matek::Math::NumberTheory::Number::Rational& exponent`
+- `const Matek::Math::NumberTheory::Number::Rational& epsilon`
+	- The result will be within this epsilon accuracy. Epsilon represents an absolute margin of error.
+
+Return value
+- `Matek::Math::NumberTheory::Number::Rational`
+
+Exceptions
 - `Matek::Exception::InvalidEpsilonValue`
 
 <br/><br/>
@@ -55,7 +80,7 @@ Parameters
 - `const Matek::Math::NumberTheory::Number::Rational& radicand`
 - `const Matek::Math::NumberTheory::Number::Rational& degree`
 - `const Matek::Math::NumberTheory::Number::Rational& epsilon`
-	- The result will be within this epsilon accuracy
+	- The result will be within this epsilon accuracy. Epsilon represents an absolute margin of error.
 
 Return value
 - `Matek::Math::NumberTheory::Number::Rational`
@@ -83,7 +108,7 @@ Computes approximation of natural logarithm with arbitrary accuracy.
 Parameters
 - `const Matek::Math::NumberTheory::Number::Rational& x`
 - `const Matek::Math::NumberTheory::Number::Rational& epsilon`
-	- The result will be within this epsilon accuracy
+	- The result will be within this epsilon accuracy. Epsilon represents an absolute margin of error.
 
 Return value
 - `Matek::Math::NumberTheory::Number::Rational`
@@ -111,7 +136,7 @@ Parameters
 - `const Matek::Math::NumberTheory::Number::Rational& x`
 - `const Matek::Math::NumberTheory::Number::Rational& base`
 - `const Matek::Math::NumberTheory::Number::Rational& epsilon`
-	- The result will be within this epsilon accuracy
+	- The result will be within this epsilon accuracy. Epsilon represents an absolute margin of error.
 
 Return value
 - `Matek::Math::NumberTheory::Number::Rational`

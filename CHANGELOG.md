@@ -9,6 +9,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <br/><br/>
 
+## v0.4.0 - 2023.05.12
+
+### Added
+- Functionality
+	- Euler's number approximation
+	- Pi approximation
+	- Natural exponential function (e^x)
+	- Sine and Cosine function
+- Header files
+	- include/Cache/Analysis/Numerical/Constant.h
+	- include/Dto/IntegerRational.h
+	- include/Math/Analysis/Numerical/Trigonometry.h
+
+### Changed
+- Long long types of returns and arguments has modified in functions.
+- Readme file
+- Library files
+- Documentation files
+- Example files
+- Performance optimization
+
+### Fixed
+- An edge case bug has fixed in logarithm function.
+- An edge case bug has fixed in power and root functions.
+
+
+
+<br/><br/>
+
 ## v0.3.0 - 2022.07.29
 
 ### Added
